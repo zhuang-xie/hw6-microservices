@@ -9,4 +9,7 @@ public interface ItemRepository extends PagingAndSortingRepository<Item, String>
 
 	@Query("select item from Item item where item.category = ?1")
     Iterable<Item> findByCategory(String category);
+	
+	@Query("select item from Item item where item.id = ?1")
+	Iterable<Item> findById(Long id);
 }
