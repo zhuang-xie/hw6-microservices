@@ -9,24 +9,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ItemController {
-	
-    @Autowired
-    ItemRepository repository;
 
-    @RequestMapping("/items")
-    public Iterable<Item> items() {
-        return repository.findAll();
-    }
+	@Autowired
+	ItemRepository repository;
 
-  @RequestMapping("/category/{cat}")
-  public Iterable<Item> itemsByCategory(@PathVariable("cat") String category) {
-    Iterable<Item> items = repository.findByCategory(category);
-    return items;
-  }
-  
-  @RequestMapping("/item/{id}")
-  public Iterable<Item> itemById(@PathVariable("id") Long id) {
-	Iterable<Item> items = repository.findById(id);
-    return items;
-  }
+	@RequestMapping("/items")
+	public Iterable<Item> items() {
+		return repository.findAll();
+	}
+
+	@RequestMapping("/category/{cat}")
+	public Iterable<Item> itemsByCategory(@PathVariable("cat") String category) {
+		Iterable<Item> items = repository.findByCategory(category);
+		return items;
+	}
+
+	@RequestMapping("/itemid/{id}")
+	public Iterable<Item> itemById(@PathVariable("id") Long id) {
+		Iterable<Item> items = repository.findById(id);
+		return items;
+	}
 }

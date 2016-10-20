@@ -8,10 +8,6 @@ server:
 ribbon:
   IsSecure: false
 
-#fortunes:
-#  ribbon:
-#    ServerListRefreshInterval: 5000
-
 security:
   basic:
     enabled: false
@@ -34,6 +30,10 @@ hystrix:
     randomFortune:
       execution.isolation.thread.timeoutInMilliseconds: 2000
 
-fortunes:
+item:
   ribbon:
     listOfServers: localhost:8080
+    
+price:
+  ribbon:
+    listOfServers:  localhost:8090

@@ -15,6 +15,7 @@
 		<groupId>io.spring.cloud.samples</groupId>
 		<artifactId>commerce</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
 	</parent>
 
 	<properties>
@@ -61,11 +62,11 @@
 				<configuration>
 					<serviceProviders>
 						<serviceProvider>
-							<name>FortuneService</name>
+							<name>ItemService</name>
 							<consumers>
 								<consumer>
-									<name>FortuneUi</name>
-									<pactFile>../fortune-teller-ui/target/pacts/FortuneUi-FortuneService.json</pactFile>
+									<name>CommerceUi</name>
+									<pactFile>../commerce-ui/target/pacts/CommerceUi-ItemService.json</pactFile>
 								</consumer>
 							</consumers>
 						</serviceProvider>

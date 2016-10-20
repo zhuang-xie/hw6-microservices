@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ng-app="fortunes">
+<html ng-app="commerce">
 
 <head>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
@@ -16,11 +16,24 @@
 <body>
 
 <div class="jumbotron container">
-    <h1>Fortune Teller!</h1>
-    <p>Find out what the future holds...</p>
+    <h1>Commerce UI</h1>
+    <p>Code Group #12</p>
+    <p>Go to <b>/items</b> to list all items with their prices</p>
+    <p>Go to <b>/category/{category}</b> (e.g. /category/shoes or /category/shirts) 
+        to list all items and their prices based on a category input</p>
+    <p>Go to <b>/item/{itemid}</b> (e.g. /item/1001) to list an item with its price based on item id</p>
 </div>
 
-<div ng-view class="container"></div>
+<div class="container">
+	<p>Notes:</p>
+	<ul>
+		<li>Item service runs on port 8080. It is protected by a Hystrix circuit breaker. 
+			If the circuit is tripped to open, a message "Item service not available" will be displayed.</li>
+		<li>Price service runs on port 8090. It is protected by a Hystrix circuit breaker. 
+			If the circuit is tripped to open, a message "Price service not available" will be displayed.</li>
+		<li>Commerce UI runs on port 8081.</li>
+	</ul>
+</div>
 
 
 
